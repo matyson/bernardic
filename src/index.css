@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face{
+  font-family: "NerkoOne";
+  src:local("NerkoOne-Regular"),
+  url('./assets/fonts/NerkoOne-Regular.ttf') 
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -23,6 +29,7 @@ a:hover {
 }
 
 body {
+  font-family: NerkoOne, sans-serif;
   margin: 0;
   display: flex;
   place-items: center;
