@@ -10,31 +10,22 @@ import {
 } from "@/components/ui/card";
 import { words, type Word } from "@/db/db";
 
-const getWordOfTheDay = () => {
-  const today = new Date().toDateString();
-
-  // Simple hash function to convert date string to number
-  const hash = today.split("").reduce((acc, char) => {
-    return char.charCodeAt(0) + ((acc << 5) - acc);
-  }, 0);
-
-  // Use the hash to seed the random number generator
-  let seed = hash;
-  const rng = () => {
-    seed = (seed * 9301 + 49297) % 233280;
-    return seed / 233280;
-  };
-
-  // Select a random word using the seeded random number generator
-  const randomIndex = Math.floor(rng() * words.length);
-  return words[randomIndex] || words[0]; // Fallback to first word if randomIndex is out of bounds
-};
+function getDailyItem(data: Word[]) {
+  const today = new Date();
+  const dateString = today.toISOString().split("T")[0]; // Get the date in YYYY-MM-DD format
+  const dateHash = Array.from(dateString).reduce(
+    (hash, char) => hash + char.charCodeAt(0),
+    0,
+  ); // Simple hash function
+  const index = dateHash % data.length;
+  return data[index];
+}
 
 export function DailyWordRandom() {
   const [wordOfTheDay, setWordOfTheDay] = useState<Word | undefined>(undefined);
 
   useEffect(() => {
-    setWordOfTheDay(getWordOfTheDay());
+    setWordOfTheDay(getDailyItem(words));
   }, []);
 
   return (
