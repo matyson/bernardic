@@ -1,6 +1,4 @@
 import { useState } from "react";
-import "./App.css";
-import "./index.css";
 import { Button } from "./components/ui/button";
 import { DailyWordRandom } from "./components/daily-word-random";
 function App() {
