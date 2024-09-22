@@ -10,21 +10,41 @@ export type Word = {
 export const words: Word[] = [
   {
     id: 1,
-    word: "abandon",
+    word: "op",
     definition:
-      "to leave someone or something somewhere, sometimes not returning to get that person or thing",
-    examples: ["He was abandoned by his mother and left to fend for himself."],
-    synonyms: [
-      "desert, forsake, jilt, leave, strand, ditch, dump, leave high and dry, leave in the lurch, run out on, throw over",
-    ],
+      "Quando uma coisa é muito boa, excelente, maravilhosa, incrível, espetacular, etc.",
+    examples: ["Esse filme é op demais!"],
+    synonyms: ["forte", "bom", "incrível"],
   },
   {
     id: 2,
-    word: "abate",
-    definition: "to become less strong",
-    examples: ["The storm suddenly abated."],
-    synonyms: [
-      "decrease, diminish, dwindle, lessen, moderate, recede, subside, wane",
-    ],
+    word: "forte",
+    definition:
+      "Quando uma coisa é muito boa, excelente, maravilhosa, incrível, espetacular, etc.",
+    examples: ["Esse filme é forte demais!"],
+    synonyms: ["op", "bom", "incrível"],
+  },
+  {
+    id: 3,
+    word: "chama",
+    definition:
+      "Quando se está muito empolgado com algo; eleva a moral de alguém.",
+    examples: ["Nossa, mandou bem! Chama!"],
+    synonyms: ["vamo", "dale"],
+  },
+  {
+    id: 4,
+    word: "vamo",
+    definition:
+      "Quando se está muito empolgado com algo; eleva a moral de alguém.",
+    examples: ["Nossa, mandou bem! Vamo!"],
+    synonyms: ["chama", "dale"],
+  },
+  {
+    id: 5,
+    word: "troll",
+    definition: "Pessoa com atitudes desagradáveis e/ou provocativas.",
+    examples: ["Esse cara é um troll."],
+    synonyms: ["meme", "podre", "crime"],
   },
 ];
