@@ -1,3 +1,4 @@
+import { Search } from "@/components/search";
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 const TanStackRouterDevtools =
@@ -10,21 +11,26 @@ const TanStackRouterDevtools =
       );
 
 export const Route = createRootRoute({
-  component: () => (
+  component: () => <Root />,
+  notFoundComponent: () => <div>404 - Not Found</div>,
+});
+
+function Root() {
+  return (
     <>
-      <div className="flex gap-2 p-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Home
+      <div className="flex justify-between gap-2 p-2">
+        <Link
+          to="/"
+          className="font-custom [&.active]:font-bold [&.active]:text-primary"
+        >
+          Bernardic
         </Link>{" "}
-        <Link to="/about" className="[&.active]:font-bold">
-          About
-        </Link>
+        <Search />
       </div>
-      <hr />
       <Outlet />
       <Suspense>
         <TanStackRouterDevtools />
       </Suspense>
     </>
-  ),
-});
+  );
+}
