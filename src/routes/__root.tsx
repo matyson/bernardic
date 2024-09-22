@@ -21,9 +21,9 @@ function Root() {
       <div className="flex justify-between gap-2 p-2">
         <Link
           to="/"
-          className="font-custom [&.active]:font-bold [&.active]:text-primary"
+          className="font-caveat text-2xl [&.active]:font-bold [&.active]:text-primary"
         >
-          Bernardic
+          bernardic
         </Link>{" "}
         <Search />
       </div>
