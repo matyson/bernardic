@@ -40,7 +40,7 @@ export function DailyWordRandom() {
       <CardContent className="flex flex-col gap-2">
         <Link
           to={`/words/${wordOfTheDay?.word}`}
-          className="text-lg font-bold hover:underline"
+          className="w-fit text-lg font-bold hover:text-primary"
         >
           {wordOfTheDay?.word}
         </Link>
