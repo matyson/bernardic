@@ -14,7 +14,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as WordsIndexImport } from './routes/words/index'
-import { Route as WordsWordIdImport } from './routes/words/$wordId'
+import { Route as WordsWordImport } from './routes/words/$word'
 
 // Create Virtual Routes
 
@@ -38,8 +38,8 @@ const WordsIndexRoute = WordsIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const WordsWordIdRoute = WordsWordIdImport.update({
-  path: '/words/$wordId',
+const WordsWordRoute = WordsWordImport.update({
+  path: '/words/$word',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -61,11 +61,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutLazyImport
       parentRoute: typeof rootRoute
     }
-    '/words/$wordId': {
-      id: '/words/$wordId'
-      path: '/words/$wordId'
-      fullPath: '/words/$wordId'
-      preLoaderRoute: typeof WordsWordIdImport
+    '/words/$word': {
+      id: '/words/$word'
+      path: '/words/$word'
+      fullPath: '/words/$word'
+      preLoaderRoute: typeof WordsWordImport
       parentRoute: typeof rootRoute
     }
     '/words/': {
@@ -83,14 +83,14 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
-  '/words/$wordId': typeof WordsWordIdRoute
+  '/words/$word': typeof WordsWordRoute
   '/words': typeof WordsIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
-  '/words/$wordId': typeof WordsWordIdRoute
+  '/words/$word': typeof WordsWordRoute
   '/words': typeof WordsIndexRoute
 }
 
@@ -98,30 +98,30 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
   '/about': typeof AboutLazyRoute
-  '/words/$wordId': typeof WordsWordIdRoute
+  '/words/$word': typeof WordsWordRoute
   '/words/': typeof WordsIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/words/$wordId' | '/words'
+  fullPaths: '/' | '/about' | '/words/$word' | '/words'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/words/$wordId' | '/words'
-  id: '__root__' | '/' | '/about' | '/words/$wordId' | '/words/'
+  to: '/' | '/about' | '/words/$word' | '/words'
+  id: '__root__' | '/' | '/about' | '/words/$word' | '/words/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   AboutLazyRoute: typeof AboutLazyRoute
-  WordsWordIdRoute: typeof WordsWordIdRoute
+  WordsWordRoute: typeof WordsWordRoute
   WordsIndexRoute: typeof WordsIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   AboutLazyRoute: AboutLazyRoute,
-  WordsWordIdRoute: WordsWordIdRoute,
+  WordsWordRoute: WordsWordRoute,
   WordsIndexRoute: WordsIndexRoute,
 }
 
@@ -139,7 +139,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
-        "/words/$wordId",
+        "/words/$word",
         "/words/"
       ]
     },
@@ -149,8 +149,8 @@ export const routeTree = rootRoute
     "/about": {
       "filePath": "about.lazy.tsx"
     },
-    "/words/$wordId": {
-      "filePath": "words/$wordId.tsx"
+    "/words/$word": {
+      "filePath": "words/$word.tsx"
     },
     "/words/": {
       "filePath": "words/index.tsx"

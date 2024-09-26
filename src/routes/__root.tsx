@@ -1,6 +1,7 @@
 import { Search } from "@/components/search";
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
+
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
     ? () => null
