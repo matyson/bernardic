@@ -9,6 +9,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { words, type Word } from "@/db/db";
+import { Link } from "@tanstack/react-router";
 
 function getDailyItem(data: Word[]) {
   const today = new Date();
@@ -31,12 +32,20 @@ export function DailyWordRandom() {
   return (
     <Card className="mx-auto w-full max-w-md">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">Word of the Day</CardTitle>
-        <CardDescription>{new Date().toLocaleDateString()}</CardDescription>
+        <CardTitle className="text-2xl font-bold">Palavra do Dia</CardTitle>
+        <CardDescription>
+          {new Date().toLocaleDateString("pt-BR")}
+        </CardDescription>
       </CardHeader>
-      <CardContent>
-        <h2 className="mb-2 text-xl font-semibold">{wordOfTheDay?.word}</h2>
-        <p className="text-gray-600">{wordOfTheDay?.definition}</p>
+      <CardContent className="flex flex-col gap-2">
+        <Link
+          to={`/words/${wordOfTheDay?.word}`}
+          className="text-lg font-bold hover:underline"
+        >
+          {wordOfTheDay?.word}
+        </Link>
+        <p className="text-sm text-muted-foreground">{wordOfTheDay?.type}</p>
+        <p className="text-sm">{wordOfTheDay?.definition[0]}</p>
       </CardContent>
     </Card>
   );
