@@ -1,6 +1,6 @@
 export type Word = {
   id: number;
-  type: "verb" | "noun" | "adjective" | "adverb";
+  type: "verbo" | "substantivo" | "adjetivo" | "advérbio";
   word: string;
   definition: string[];
   examples: string[];
@@ -11,7 +11,7 @@ export type Word = {
 export const words: Word[] = [
   {
     id: 1,
-    type: "adjective",
+    type: "adjetivo",
     word: "op",
     definition: [
       "Quando uma coisa é muito boa, excelente, maravilhosa, incrível, espetacular, etc.",
@@ -21,7 +21,7 @@ export const words: Word[] = [
   },
   {
     id: 2,
-    type: "adjective",
+    type: "adjetivo",
     word: "forte",
     definition: [
       "Quando uma coisa é muito boa, excelente, maravilhosa, incrível, espetacular, etc.",
@@ -31,7 +31,7 @@ export const words: Word[] = [
   },
   {
     id: 3,
-    type: "verb",
+    type: "verbo",
     word: "chama",
     definition: [
       "Quando se está muito empolgado com algo; eleva a moral de alguém.",
@@ -41,7 +41,7 @@ export const words: Word[] = [
   },
   {
     id: 4,
-    type: "verb",
+    type: "verbo",
     word: "vamo",
     definition: [
       "Quando se está muito empolgado com algo; eleva a moral de alguém.",
@@ -51,7 +51,7 @@ export const words: Word[] = [
   },
   {
     id: 5,
-    type: "adjective",
+    type: "adjetivo",
     word: "troll",
     definition: ["Pessoa com atitudes desagradáveis e/ou provocativas."],
     examples: ["Esse cara é um troll."],
