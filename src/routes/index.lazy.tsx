@@ -1,5 +1,4 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import App from "@/App";
 import { DailyWordRandom } from "@/components/daily-word-random";
 
 export const Route = createLazyFileRoute("/")({
