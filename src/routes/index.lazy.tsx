@@ -8,9 +8,9 @@ export const Route = createLazyFileRoute("/")({
 function Index() {
   return (
     <>
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4 bg-white bg-[linear-gradient(#f1f5f9_1px,transparent_1px),linear-gradient(to_right,#f1f5f9_1px,transparent_1px)] bg-[size:20px_20px] p-24">
         <article className="prose">
-          <h2 className="font-caveat text-center">bernardic</h2>
+          <h2 className="text-center font-caveat">bernardic</h2>
           <p>
             Oi, já teve aquele amigo que sempre se comunica por gírias? Pois
             bem, eu sou esse amigo. E pra facilitar pros meus amigos entenderem
