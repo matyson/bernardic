@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute("/")({
 function Index() {
   return (
     <>
-      <div className="flex flex-col items-center gap-4 bg-white bg-[linear-gradient(#f1f5f9_1px,transparent_1px),linear-gradient(to_right,#f1f5f9_1px,transparent_1px)] bg-[size:20px_20px] p-24">
+      <div className="flex flex-col items-center gap-4 bg-white bg-[linear-gradient(#f1f5f9_1px,transparent_1px),linear-gradient(to_right,#f1f5f9_1px,transparent_1px)] bg-[size:20px_20px] px-10 py-8">
         <article className="prose">
           <h2 className="text-center font-caveat">bernardic</h2>
           <p>
